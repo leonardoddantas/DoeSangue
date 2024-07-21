@@ -1,0 +1,281 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: Montserrat, sans-serif;
+}
+
+/* Color Definitions */
+:root {
+    --light: #f9f9f9;
+    --second-light: #F0F0F0;
+    --third-light: #FFFFFF;
+    --dark: #0D0D0D;
+    --second-dark: #232326;
+    --third-dark: #3F3F40;
+    --primary: #F21D1D;
+    --second-primary: #BF0F0F;
+    --third-primary: #730707;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    padding: 0rem 5rem;
+    background-color: var(--second-light);
+    z-index: 10;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dark);
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.logoSpan {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-list {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+}
+
+.nav-list li {
+    width: 100%;
+}
+
+.nav-list li a {
+    font-size: 1.1rem;
+    color: var(--dark);
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.nav-list li:hover a {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+    transform: scale(1.3);
+}
+
+/* Menu Button */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 2rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--dark);
+    z-index: 10;
+}
+
+/* Main content */
+main {
+    background-color: var(--light);
+}
+
+section {
+    width: 100%;
+    height: auto;
+    padding: 2rem 5rem;
+}
+
+/* Home section */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+}
+
+.home .info h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: .5rem;
+    margin-bottom: 1rem;
+}
+
+.home .info span {
+    color: var(--primary);
+}
+
+.home .info p {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.home .info button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    background-color: var(--primary);
+    color: var(--third-light);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.home .info button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px var(--second-primary);
+}
+
+.image-container {
+    position: absolute;
+    top: 4.6rem;
+    right: 0;
+    bottom: 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* Section on Blood Donation Information */
+.donation-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--second-primary);
+    color: var(--light);
+}
+
+.donation-info div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-grow: 1;
+    flex-basis: 200;
+}
+
+.donation-info span {
+    font-size: 3rem;
+}
+
+.donation-info a {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    color: var(--light);
+}
+
+.donation-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .image-container {
+        display: none;
+    }
+
+    .home {
+        height: auto;
+        padding: 7rem 2rem 2rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Responsive Header */
+    .header {
+        padding: 0rem 2rem;
+    }
+
+    .nav-list {
+        position: absolute;
+        padding: 3rem;
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: baseline;
+        top: 0;
+        right: 0;
+        background-color: var(--second-light);
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        padding: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    section {
+        padding: 2rem 2rem;
+    }
+
+    /* Resposive Home section */
+    .home .info h2 {
+        font-size: 3rem;
+    }
+
+    .home .info p {
+        font-size: 1.3rem;
+    }
+
+    .home .info button {
+        font-size: 1rem;
+    }
+
+    .donation-info div {
+        margin-bottom: 2rem;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
